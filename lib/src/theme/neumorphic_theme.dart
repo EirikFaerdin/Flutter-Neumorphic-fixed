@@ -107,13 +107,39 @@ class NeumorphicTheme extends StatefulWidget {
     return currentTheme(context).defaultTextColor;
   }
 
+  /* Eirik 10.03.25: Original code which is not null-safe
   static NeumorphicThemeData currentTheme(BuildContext context) {
     final provider = NeumorphicTheme.of(context);
     if (provider == null) return neumorphicDefaultTheme;
     return provider.current == null
         ? neumorphicDefaultTheme
         : provider.current!;
+  } */
+
+  //Alternative 1 which produce error:
+  // "A value of type 'Object' can't be returned from the method 'currentTheme' because it has a return type of 'NeumorphicThemeData'"
+/*  static NeumorphicThemeData currentTheme(BuildContext context) {
+    final provider = NeumorphicTheme.of(context);
+    if (provider == null) return neumorphicDefaultTheme;
+    return provider.current ?? neumorphicDefaultTheme;
+  }*/
+
+//Alternative 2 which produce error:
+  //A value of type 'NeumorphicThemeData?' can't be returned from the method
+  // 'currentTheme' because it has a return type of 'NeumorphicThemeData'.
+/*  static NeumorphicThemeData currentTheme(BuildContext context) {
+    final provider = NeumorphicTheme.of(context);
+    if (provider == null) return neumorphicDefaultTheme;
+    if (provider.current == null) return neumorphicDefaultTheme;
+    return provider.current; // No need for ! here
+  }*/
+
+  static NeumorphicThemeData currentTheme(BuildContext context) {
+    final provider = NeumorphicTheme.of(context);
+    if (provider == null) return neumorphicDefaultTheme;
+    return provider.current; // Use ?? here
   }
+
 }
 
 double applyThemeDepthEnable(

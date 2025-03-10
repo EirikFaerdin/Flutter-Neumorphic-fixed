@@ -21,8 +21,14 @@ class NeumorphicThemeInherited extends InheritedWidget {
   @override
   bool updateShouldNotify(NeumorphicThemeInherited old) => value != old.value;
 
-  NeumorphicThemeData? get current {
+  //Eirik 10.03.25: Old code
+/*  NeumorphicThemeData? get current {
     return this.value.current;
+  }*/
+
+  //Eirik 10.03.25: Updated code
+  NeumorphicThemeData get current {
+    return this.value.current ?? neumorphicDefaultTheme;
   }
 
   bool get isUsingDark {

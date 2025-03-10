@@ -85,11 +85,14 @@ class NeumorphicColors {
 
   static Color _applyPercentageOnOpacity(
       {required Color maxColor, required double percent}) {
-    final maxOpacity = maxColor.a;
+    //final maxOpacity = maxColor.a; Eirik 10.03.25: Replaced with .alpha / 255
+    final maxOpacity = maxColor.alpha / 255;
     final maxIntensity = Neumorphic.MAX_INTENSITY;
     final newOpacity = percent * maxOpacity / maxIntensity;
     final newColor =
-        maxColor.withValues(alpha: newOpacity); //<-- intensity act on opacity;
+        //Eirik 10.03.25: Replaced .withValues with .withAlpha
+        //maxColor.withValues(alpha: newOpacity); //<-- intensity act on opacity;
+        maxColor.withAlpha((newOpacity * 255).round()); //<-- intensity act on opacity;
     return newColor;
   }
 }

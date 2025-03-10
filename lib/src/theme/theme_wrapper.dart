@@ -27,9 +27,19 @@ class ThemeWrapper {
                   .platformDispatcher.platformBrightness ==
               Brightness.dark);
 
-  NeumorphicThemeData? get current {
+//Eirik 10.03.25: Old code
+/*  NeumorphicThemeData? get current {
     if (useDark) {
       return darkTheme;
+    } else {
+      return theme;
+    }
+  }*/
+
+  //Eirik 10.03.25: Updated code
+  NeumorphicThemeData get current {
+    if (useDark) {
+      return darkTheme ?? theme; //Provide 'theme' as a fallback
     } else {
       return theme;
     }
