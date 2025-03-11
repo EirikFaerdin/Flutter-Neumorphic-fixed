@@ -1,7 +1,8 @@
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:flutter/widgets.dart';
+import 'theme.dart';
+import 'theme_wrapper.dart';
+import '../../flutter_neumorphic.dart';
 
-export 'theme.dart';
-export 'theme_wrapper.dart';
 
 typedef NeumorphicThemeUpdater = NeumorphicThemeData Function(
     NeumorphicThemeData? current);

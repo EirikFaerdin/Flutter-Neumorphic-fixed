@@ -1,4 +1,5 @@
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+//import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import '../../flutter_neumorphic.dart';
 
 typedef void NeumorphicRangeSliderLowListener(double percent);
 typedef void NeumorphicRangeSliderHighListener(double percent);

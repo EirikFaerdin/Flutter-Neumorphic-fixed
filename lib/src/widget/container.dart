@@ -5,6 +5,7 @@ import '../decoration/neumorphic_decorations.dart';
 import '../neumorphic_box_shape.dart';
 import '../theme/neumorphic_theme.dart';
 import 'clipper/neumorphic_box_shape_clipper.dart';
+import '../../src/theme/theme.dart';
 
 export '../decoration/neumorphic_decorations.dart';
 export '../neumorphic_box_shape.dart';

@@ -1,8 +1,7 @@
-import '../../flutter_neumorphic.dart';
-
-export 'inherited_neumorphic_theme.dart';
-export 'theme.dart';
-export 'theme_wrapper.dart';
+import 'package:flutter/material.dart'; // Import material.dart
+import 'package:flutter/widgets.dart';
+import 'inherited_neumorphic_theme.dart';
+import 'theme_wrapper.dart';
 
 /// The NeumorphicTheme (provider)
 /// 1. Defines the used neumorphic theme used in child widgets

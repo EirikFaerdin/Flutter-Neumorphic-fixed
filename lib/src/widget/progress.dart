@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-
+import '../../src/theme/theme.dart';
 import 'container.dart';
 
 /// A style to customize the [NeumorphicProgress]
